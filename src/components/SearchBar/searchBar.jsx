@@ -10,7 +10,7 @@ import './searchBar.css';
 
 function SearchBar (props) {
       return (
-            <div id = "sbar">
+            <div id = "bar">
                 <form className="form-inline">
                     <div className= "row form-group">
                         <div className= "col">
