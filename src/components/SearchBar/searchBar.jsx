@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './searchBar.css';
 
-// const handleChange = (props) => {
-//     const []
-//     });
-// }
 
 
 
-function SearchBar (props) {
+    const SearchBar (props) {
       return (
             <div id = "bar">
                 <form className="form-inline">
@@ -24,5 +21,25 @@ function SearchBar (props) {
             </div>
       );
   }
+
+// const SearchBar = (props) => {
+//     const [searchs, setSearch] = useState({});
+    
+//     useEffect(() => {
+//         axios.get(`https://www.googleapis.com/youtube/v3/search?q=spaceboy&key=AIzaSyBvJRwQAbHRW06feqhuKZGcwGRv8vdzHjI`)
+//             .then(response => setSearch(response.data))
+//             }, []);
+//     return(        
+//         <div>
+//             {searchs && searchs.map((search) => {
+//                 return(
+//                     <tr key={search.id} >
+//                         <td>{search.videoId}</td>
+//                     </tr>
+//                 )
+//             })}
+//         </div>
+//     )                  
+// };
 
 export default SearchBar;
