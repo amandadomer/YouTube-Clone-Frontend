@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 const Comment = (props) => {
     const [comments, setComments] = useState({});
     
