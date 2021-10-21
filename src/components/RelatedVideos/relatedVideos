@@ -1,0 +1,27 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const RelatedVideos = (props) => { 
+    const [relatedVideo, setRelatedVideo] = useState({});
+        
+    useEffect(() => {
+        axios.get('https://www.googleapis.com/youtube/v3/search?relatedToVideoId=YErFwJX0HKE&type=video&key=AIzaSyBvJRwQAbHRW06feqhuKZGcwGRv8vdzHjI')
+            .then(response => setRelatedVideo(response.data))
+            }, []);
+    
+        return (
+                <div>
+                    <tbody>
+                    {comments && comments.map((comment) => {
+                        return(
+                            <tr key={comment.id} >
+                                <td>{comment.text}</td>
+                            </tr>
+                        )
+                    })}
+                    </tbody>
+                </div>
+    )
+}
+
+export default RelatedVideos;
