@@ -14,7 +14,7 @@ const Comment = (props) => {
             <ul>
             {comments && comments.map((comment) => {
                 return(
-                    <li>{comment.text}</li>
+                    <li>{comment.text}</li>        
                 )
             })}
             </ul>

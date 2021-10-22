@@ -9,19 +9,19 @@ import axios from 'axios';
 const App = () =>{
     const [videoId, setVideoId] = useState ("");
 
-    useEffect(() => {
-        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyBYNAyhrggBV6rpBznjy7m9bMOz3xzghO4`)
-        .then(response => setVideoId(response.data))
-    }, [videoId]);
+    // useEffect(() => {
+    //     axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyB_5_raFN-x13Hozq1vichWGp10uOfvRxQ`)
+    //     .then(response => setVideoId(response.data))
+    // }, [videoId]);
 
     
     return (
         <div>
             <TitleBar />
-            <SearchBar />
+            <SearchBar setVideoId = {setVideoId}/>
             <Player videoId = {videoId}/>
-            {/* <Comment /> */}
-            <RelatedVideos />
+            <Comment setVideoId = {setVideoId}/>
+            <RelatedVideos setVideoId = {setVideoId}/>
         </div>
     )
 }
