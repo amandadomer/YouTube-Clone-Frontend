@@ -5,22 +5,29 @@ import './searchBar.css';
 
 
 
-    const SearchBar (props) {
-      return (
-            <div id = "bar">
-                <form className="form-inline">
-                    <div className= "row form-group">
-                        <div className= "col">
-                            <input type="text" className="form-control" id="search_field" onChange={props.handleSearch} placeholder="Type here..." rows="1"/>
-                        </div>
-                        <div className="col-sm-2">
-                        </div>
-                        
+const SearchBar = (props) => {
+   const [search, setSearch] = useState ("");
+    const handleChange = (event) => {
+        setSearch (event.target.value)
+        console.log(search)
+    }
+
+
+    return (
+        <div id = "bar">
+            <form className="form-inline">
+                <div className= "row form-group">
+                    <div className= "col">
+                        <input type="text" className="form-control" id="search_field" onChange={handleChange} placeholder="Type here..." rows="1"/>
                     </div>
-                </form>
-            </div>
-      );
-  }
+                    <div className="col-sm-2">
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    );
+}
 
 // const SearchBar = (props) => {
 //     const [searchs, setSearch] = useState({});

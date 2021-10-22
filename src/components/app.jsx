@@ -3,18 +3,25 @@ import SearchBar from './SearchBar/searchBar';
 import TitleBar from './TitleBar/titleBar';
 import Player from './Player/player'
 import Comment from './Comment/comment'
-
+import RelatedVideos from './RelatedVideos/relatedVideos';
+import axios from 'axios';
 
 const App = () =>{
-    const [videoId, setVideoId] = useState;
+    const [videoId, setVideoId] = useState ("");
 
+    useEffect(() => {
+        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyBYNAyhrggBV6rpBznjy7m9bMOz3xzghO4`)
+        .then(response => setVideoId(response.data))
+    }, [videoId]);
+
+    
     return (
         <div>
             <TitleBar />
             <SearchBar />
-            <Player />
+            <Player videoId = {videoId}/>
             <Comment />
-            <SearchBar setVideoId/>
+            <RelatedVideos />
         </div>
     )
 }
