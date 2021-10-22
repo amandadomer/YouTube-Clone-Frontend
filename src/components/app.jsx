@@ -1,19 +1,22 @@
 import React from 'react';
 import SearchBar from './SearchBar/searchBar';
 import TitleBar from './TitleBar/titleBar';
-import Player from './Player/player'
+// import Player from './Player/player'
 import Comment from './Comment/comment'
+import RelatedVideos from './RelatedVideos/relatedVideos';
 
+const App = () => {
 
-function App(){
-    return (
+    
         <div>
             <TitleBar />
             <SearchBar />
-            <Player />
+            {/* <Player /> */}
             <Comment />
+            <RelatedVideos />
         </div>
     )
-}
+};
 
 export default App;
+export default useForm;
