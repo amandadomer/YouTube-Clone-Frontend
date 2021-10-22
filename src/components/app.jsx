@@ -7,7 +7,7 @@ import RelatedVideos from './RelatedVideos/relatedVideos';
 import axios from 'axios';
 
 const App = () =>{
-    const [videoId, setVideoId] = useState ("");
+    const [videoId, setVideoId] = useState ("1EQg9kV6f98");
 
     // useEffect(() => {
     //     axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyB_5_raFN-x13Hozq1vichWGp10uOfvRxQ`)
