@@ -11,9 +11,14 @@ const SearchBar = (props) => {
     }
 
     const HandleSubmit = (event) => { 
-            axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyCRMqb6wCFo3iFxs9wcDZDBIRYHXsvs4Fo`)
+        event.preventDefault();    
+        axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyCRMqb6wCFo3iFxs9wcDZDBIRYHXsvs4Fo`)
                 .then((response)=> setVideoId (response.data.items[0].id.videoId))
-                .then(() => props.setVideoId (videoId))
+                .then(() => {
+                    props.setVideoId (videoId)
+                    console.log(videoId)
+                })
+
     }
     
 
