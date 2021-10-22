@@ -5,23 +5,24 @@ const RelatedVideos = (props) => {
     const [relatedVideos, setRelatedVideos] = useState([]);
         
     useEffect(() => {
-        axios.get('https://www.googleapis.com/youtube/v3/search?relatedToVideoId=YErFwJX0HKE&type=video&key=AIzaSyBvJRwQAbHRW06feqhuKZGcwGRv8vdzHjI')
-            .then(response => setRelatedVideos(response.data))
-            }, []);
+        axios.get('https://www.googleapis.com/youtube/v3/search?relatedToVideoId=YErFwJX0HKE&type=video&key=AIzaSyB_5_raFN-x13Hozq1vichWGp10uOfvRxQ')
+            .then(response => setRelatedVideos(response.data.items))
+            .then(() => console.log(relatedVideos))
+            }, [relatedVideos]);
     
         return (
                 <div>
-                    <tbody>
+                    <ul>
                     {relatedVideos && relatedVideos.map((relatedVideo) => {
                         return(
-                            <tr key={relatedVideo.id} >
-                                <td>{relatedVideo.text}</td>
-                            </tr>
+                            <li> {relatedVideo.id.videoId} </li>
                         )
                     })}
-                    </tbody>
+                    </ul>
                 </div>
     )
 }
+
+
 
 export default RelatedVideos;

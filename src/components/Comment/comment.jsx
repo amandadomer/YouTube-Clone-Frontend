@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Comment = (props) => {
-    const [comments, setComments] = useState({});
-    const [videoId] = useState ({});
+    const [comments, setComments] = useState([]);
     
     useEffect(() => {
         axios.get(`http://localhost:5000/api/comments/${videoId}`)
@@ -12,15 +11,13 @@ const Comment = (props) => {
     
         return (
         <div>
-            <tbody>
+            <ul>
             {comments && comments.map((comment) => {
                 return(
-                    <tr key={comment.id} >
-                        <td>{comment.text}</td>
-                    </tr>
+                    <li>{comment.text}</li>
                 )
             })}
-            </tbody>
+            </ul>
         </div>
     )
 }

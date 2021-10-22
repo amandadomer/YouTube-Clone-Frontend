@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './searchBar.css';
 
 
-
-function SearchBar (props) {
-      return (
-            <div id = "bar">
-                <form className="form-inline">
-                    <div className= "row form-group">
-                        <div className= "col">
-                            <input type="text" className="form-control" id="search_field" onChange={props.handleChange} placeholder="Type here..." rows="1"/>
-                        </div>
-                        <div className="col-sm-2">
-                        </div>
-                        
+const SearchBar = (props) => {
+   const [search, setSearch] = useState ("");
+    const handleChange = (event) => {
+        setSearch(event.target.value);
+        console.log(search)
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(search);
+    }
+    return (
+            <form onSubmit={handleSubmit}>
+                <div className= "row form-group">
+                    <div className= "col">
+                        <input type="text" className="form-control" id="search_field" onChange={handleChange} placeholder="Type here..." rows="1"/>
+                <button type="submit"  class="btn btn-dark">Search</button>
                     </div>
-                </form>
-            </div>
-      );
-  }
+                </div>
+            </form>
+    );
+}
 
 export default SearchBar;
