@@ -15,7 +15,7 @@ const SearchBar = (props) => {
 
     const HandleSubmit = (event) => { 
         event.preventDefault();    
-        axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyDXCpUONzUpLCVjOzA0rLed9QSbjK73vVU`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyCv9Tmp3CSZpF2sPmQOB3tQVY8BqywQs6c`)
                 .then((response)=> setVideoId (response.data.items[0].id.videoId))
                 .then(() => {
                     props.setVideoId (videoId)
