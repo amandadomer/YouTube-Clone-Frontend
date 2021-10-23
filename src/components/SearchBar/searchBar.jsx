@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './searchBar.css';
 
@@ -15,7 +15,7 @@ const SearchBar = (props) => {
 
     const HandleSubmit = (event) => { 
         event.preventDefault();    
-        axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyCRMqb6wCFo3iFxs9wcDZDBIRYHXsvs4Fo`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyAAiHVRecDLjPkaI_CCi4FLoosrYz3F33M`)
                 .then((response)=> setVideoId (response.data.items[0].id.videoId))
                 .then(() => {
                     props.setVideoId (videoId)
