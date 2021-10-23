@@ -5,22 +5,9 @@ const RelatedVideos = (props) => {
     const [relatedVideos, setRelatedVideos] = useState([]);
         
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=AIzaSyAAiHVRecDLjPkaI_CCi4FLoosrYz3F33M`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=AIzaSyDXCpUONzUpLCVjOzA0rLed9QSbjK73vVU`)
             .then(response => setRelatedVideos(response.data.items))
-            }, [props.videoId]);
-    
-//         return (
-//                 <div>
-//                     <ul>
-//                     {relatedVideos && relatedVideos.map((relatedVideo) => {
-//                         return(
-//                             <li> {relatedVideo.id.videoId} </li>
-//                         )
-//                     })}
-//                     </ul>
-//                 </div>
-//     )
-// }
+            }, [relatedVideos]);
 
             return (
                 <div>

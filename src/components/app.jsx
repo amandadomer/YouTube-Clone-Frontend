@@ -11,8 +11,9 @@ const App = () =>{
     const [videoId, setVideoId] = useState ("1EQg9kV6f98");
 
     useEffect(() => {
-        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyAAiHVRecDLjPkaI_CCi4FLoosrYz3F33M`)
+        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyDgQ_V27VFZYkDDfXNyEw0QzdcArhTkV9Y`)
         .then(response => setVideoId(response.data))
+        .then(console.log(videoId))
     }, [videoId]);
 
     
