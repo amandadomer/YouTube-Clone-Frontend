@@ -5,6 +5,7 @@ import Player from './Player/player';
 import Comment from './Comment/comment';
 import RelatedVideos from './RelatedVideos/relatedVideos';
 import axios from 'axios';
+import AddComment from './Comment/addComment';
 
 const App = () =>{
     const [videoId, setVideoId] = useState ("1EQg9kV6f98");
@@ -20,6 +21,7 @@ const App = () =>{
             <TitleBar />
             <SearchBar setVideoId = {setVideoId}/>
             <Player videoId = {videoId}/>
+            <AddComment />
             <Comment videoId = {videoId}/>
             <RelatedVideos videoId = {videoId}/>
         </div>
