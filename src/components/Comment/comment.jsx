@@ -5,9 +5,9 @@ const Comment = (props) => {
     const [comments, setComments] = useState([]);
     
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/comments/${videoId}`)
+        axios.get('http://localhost:5000/api/comments/M7lc1UVf-VE')
             .then(response => setComments(response.data))
-            }, [videoId]);
+            }, []);
     
         return (
         <div>
