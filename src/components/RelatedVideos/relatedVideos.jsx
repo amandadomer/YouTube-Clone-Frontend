@@ -10,7 +10,7 @@ const RelatedVideos = (props) => {
             }, [props.videoId]);
 
             return (
-                <div id = "two">
+                <div>
                     <ul>
                     {relatedVideos && relatedVideos.map((relatedVideo) => {
                         return(
@@ -23,9 +23,5 @@ const RelatedVideos = (props) => {
                 </div>
             )
 }
-
-// ${relatedVideo.id.videoId}
-
-
 
 export default RelatedVideos;

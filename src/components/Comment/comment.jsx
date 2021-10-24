@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AddReply from '../AddReply/addReply'
 import axios from 'axios';
 
 const Comment = (props) => {
@@ -13,13 +14,21 @@ const Comment = (props) => {
     
         return (
         <div>    
-            <ul>
-            {comments && comments.map((comment) => {
-                return(
-                    <li key={comment}>{comment.text}</li>        
-                )
-            })}
-            </ul>
+            <div>
+                <ul>
+                {comments && comments.map((comment) => {
+                    return(
+                        <li key={comment}>
+                            {comment.text}
+                            <AddReply commentId = {comment.id} />
+                        </li>     
+                    )
+                })}
+                </ul>
+                
+            </div>
+            
+
         </div>
     )
 }
