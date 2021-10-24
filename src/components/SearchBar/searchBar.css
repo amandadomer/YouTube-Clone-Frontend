@@ -2,3 +2,10 @@
     height: 35px;
     width: 75%;    
 }
+
+#bar {
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    padding-left: 260px;
+  }

@@ -21,7 +21,7 @@ const App = () =>{
     
     
     return (
-        <div>
+      <div className="one">
             <TitleBar />
             <SearchBar setVideoId = {setVideoId}/>
             <Player videoId = {videoId}/>
@@ -32,5 +32,6 @@ const App = () =>{
         </div>
     )
 }
+
 
 export default App;

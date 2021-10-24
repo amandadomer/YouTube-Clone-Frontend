@@ -20,7 +20,6 @@ const SearchBar = (props) => {
                 })
 
     }
-    
 
     return (
         <div id = "bar">
@@ -28,7 +27,7 @@ const SearchBar = (props) => {
                 <div className= "row form-group">
                     <div className= "col">
                         <input type="text" className="form-control" id="search_field" onChange={handleChange} placeholder="Type here..." rows="1"/>
-                        <button type = "submit"> Search</button>
+                        <button type= "submit" className="btn btn-dark" > Search</button>
                     </div>
                 </div>
                 

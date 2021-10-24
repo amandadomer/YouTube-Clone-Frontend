@@ -24,13 +24,12 @@ const CreateComment = (props) => {
        }
  
      return (
-         <div>
+         <div className="comment">
              <h2>Add Comment</h2>
              <form onSubmit ={handleSubmit}>
-                <input style={{width: '100%', borderRadius: '5px'}}name="text" placeholder="Add a comment"onChange={handleChange}></input>
+                <input style={{width: '40%', height: '100px', borderRadius: '5px'}}name="text" placeholder="Say something..."onChange={handleChange}></input>
                 <button type = "submit"> Add Comment</button>
              </form>  
- 
          </div>
      )
  }
