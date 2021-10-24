@@ -28,8 +28,8 @@ const CreateReply = (props) => {
              <div>{`${replies}`}</div>
              <h4>Add Reply</h4>
              <form onSubmit ={handleSubmit}>
-                <input style={{width: '100%', borderRadius: '5px'}}name="text" placeholder="Add a reply"onChange={handleChange}></input>
-                <button type = "submit"> Add Reply</button>
+                <input style={{width: '40%', height: '40px', borderRadius: '5px'}}name="text" placeholder="Add a reply"onChange={handleChange}></input>
+                <button type = "submit" className="btn btn-dark">Add Reply</button>
              </form>  
  
          </div>

@@ -8,7 +8,7 @@ import AddNewComment from './AddNewComment/addNewComment'
 import axios from 'axios';
 
 const App = () =>{
-    const [videoId, setVideoId] = useState ("1EQg9kV6f98");
+    const [videoId, setVideoId] = useState ("YQHsXMglC9A");
     // const [comment, setComment] = useState ("")
     // const [reply, setReply] = useState (null);
 
@@ -17,21 +17,23 @@ const App = () =>{
         .then(response => setVideoId(response.data))
         .then(console.log(videoId))
     }, [videoId]);
-
     
     
     return (
-      <div className="one">
-            <TitleBar />
-            <SearchBar setVideoId = {setVideoId}/>
-            <Player videoId = {videoId}/>
-            <AddNewComment videoId = {videoId} />
-            <Comment videoId = {videoId}/>
-            <RelatedVideos videoId = {videoId}/>
-            
+      <div class="container"> 
+      <TitleBar />
+              <SearchBar setVideoId = {setVideoId}/><Player videoId = {videoId}/> 
+          <div class="row">
+          <div class="col-sm-8"> 
+              <AddNewComment videoId = {videoId} />
+              <Comment videoId = {videoId}/>
+          </div>
+          <div class="col-sm-4">
+              <RelatedVideos videoId = {videoId}/>
+          </div>
         </div>
-    )
-}
+      </div>
 
+    )};
 
 export default App;
