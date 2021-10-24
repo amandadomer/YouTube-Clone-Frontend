@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import ApiKey from '../../apikey/ApIKey/apiKey';
 import axios from 'axios';
 
 const RelatedVideos = (props) => { 
     const [relatedVideos, setRelatedVideos] = useState([]);
         
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=AIzaSyDrYhtP1mIHeb6WkxFtrPGgLWg_2sE7RF8`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=${ApiKey}`)
             .then(response => setRelatedVideos(response.data.items))
             }, [props.videoId]);
 

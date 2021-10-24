@@ -8,9 +8,7 @@ import AddNewComment from './AddNewComment/addNewComment'
 import axios from 'axios';
 
 const App = () =>{
-    const [videoId, setVideoId] = useState ("1EQg9kV6f98");
-    // const [comment, setComment] = useState ("")
-    // const [reply, setReply] = useState (null);
+    const [videoId, setVideoId] = useState ("GeZZr_p6vB8");
 
     useEffect(() => {
         axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyCv9Tmp3CSZpF2sPmQOB3tQVY8BqywQs6c`)
@@ -21,7 +19,7 @@ const App = () =>{
     
     
     return (
-      <div className="one">
+      <div className="container">
             <TitleBar />
             <SearchBar setVideoId = {setVideoId}/>
             <Player videoId = {videoId}/>
