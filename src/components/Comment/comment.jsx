@@ -5,20 +5,18 @@ const Comment = (props) => {
     const [comments, setComments] = useState([]);
     
     useEffect(() => {
-        // axios.get(`http://localhost:5000/api/comments/${props.videoId}`)
-        axios.get(`http://localhost:5000/api/comments/YQHsXMglC9A`)
+        axios.get(`http://localhost:5000/api/comments/${props.videoId}`)
             .then(response => setComments(response.data))
-            }, []);
+            }, [props.videoId]);
 
 
     
         return (
-        <div>
-      
+        <div>    
             <ul>
             {comments && comments.map((comment) => {
                 return(
-                    <li>{comment.text}</li>        
+                    <li key={comment}>{comment.text}</li>        
                 )
             })}
             </ul>
