@@ -3,8 +3,6 @@ import axios from 'axios';
 import './searchBar.css';
 
 
-
-
 const SearchBar = (props) => {
     const [search, setSearch] = useState ("");
     const [videoId, setVideoId] = useState ("")

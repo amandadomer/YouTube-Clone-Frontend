@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const App = () =>{
     const [videoId, setVideoId] = useState ("1EQg9kV6f98");
-    const [comment, setComment] = useState ("")
+    const [comment, setComment] = useState ("");
     const [reply, setReply] = useState (null);
 
     useEffect(() => {
