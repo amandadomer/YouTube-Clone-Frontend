@@ -9,12 +9,10 @@ const Comment = (props) => {
         axios.get(`http://localhost:5000/api/comments/${props.videoId}`)
             .then(response => setComments(response.data))
             }, [props.videoId]);
-
-
     
         return (
         <div>    
-            <div>
+            <div className="ul.no-bullets">
                 <ul>
                 {comments && comments.map((comment) => {
                     return(
@@ -23,8 +21,7 @@ const Comment = (props) => {
                             <br></br>
                             Likes {comment.likes}
                             <br></br>
-                            Dislikes {comment.dislikes}
-                            <AddReply commentId = {comment.id} />
+                            Dislikes {comment.dislikes}                           
                             {comment.replies && comment.replies.map((reply) =>{
                                 return(
                                     <li>
@@ -32,17 +29,15 @@ const Comment = (props) => {
                                     </li>
                                 )
                             })}
+                            <AddReply commentId = {comment.id} />
                         </li>     
                     )
                 })}
                 </ul>
                 
             </div>
-            
-
         </div>
     )
 }
-
 
 export default Comment;
