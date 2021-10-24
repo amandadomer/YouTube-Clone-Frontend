@@ -4,6 +4,7 @@ import TitleBar from './TitleBar/titleBar';
 import Player from './Player/player';
 import Comment from './Comment/comment';
 import RelatedVideos from './RelatedVideos/relatedVideos';
+import AddNewComment from './AddNewComment/addNewComment';
 import axios from 'axios';
 
 const App = () =>{
@@ -16,11 +17,13 @@ const App = () =>{
     }, [videoId]);
 
     
+    
     return (
         <div>
             <TitleBar />
             <SearchBar setVideoId = {setVideoId}/>
             <Player videoId = {videoId}/>
+            <AddNewComment videoId = {videoId}/>
             <Comment videoId = {videoId}/>
             <RelatedVideos videoId = {videoId}/>
         </div>
