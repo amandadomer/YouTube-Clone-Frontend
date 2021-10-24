@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from './SearchBar/searchBar';
-import NewComment from './AddNewComment/addNewComment';
 import TitleBar from './TitleBar/titleBar';
 import Player from './Player/player';
 import Comment from './Comment/comment';
