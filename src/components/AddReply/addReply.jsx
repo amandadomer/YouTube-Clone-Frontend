@@ -10,26 +10,24 @@ const CreateReply = (props) => {
          setText(event.target.value);
        };
  
-     const handleSubmit =(event)=>{
+     const handleSubmit =(event, props)=>{
          event.preventDefault();
          const replies={
-             replies: text
-         }
-     
-         addReplies(replies);
-     }
+             text: text
+            }
+            axios.post(`http://localhost:5000/api/comments/reply/${props.commentId}`, replies) 
+            .then(console.log(props.commentId))  
+    }
  
-     const addReplies = (replies) => {
-         axios.post(`http://localhost:5000/api/comments/reply/${props._id}`, replies)   
-       }
+
  
      return (
          <div>
              <div>{`${replies}`}</div>
              <h4>Add Reply</h4>
              <form onSubmit ={handleSubmit}>
-                <input style={{width: '100%', borderRadius: '5px'}}name="text" placeholder="Add a reply"onChange={handleChange}></input>
-                <button type = "submit"> Add Reply</button>
+                <input style={{width: '40%', height: '40px', borderRadius: '5px'}}name="text" placeholder="Add a reply"onChange={handleChange}></input>
+                <button type = "submit" className="btn btn-dark">Add Reply</button>
              </form>  
  
          </div>

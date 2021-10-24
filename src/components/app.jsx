@@ -8,28 +8,29 @@ import AddNewComment from './AddNewComment/addNewComment'
 import axios from 'axios';
 
 const App = () =>{
-    const [videoId, setVideoId] = useState ("GeZZr_p6vB8");
+    const [videoId, setVideoId] = useState ("YQHsXMglC9A");
 
     useEffect(() => {
-        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyCv9Tmp3CSZpF2sPmQOB3tQVY8BqywQs6c`)
+        axios.get (`https://www.googleapis.com/youtube/v3/search?q=${videoId}&key=AIzaSyDoxGnUT01yftGL-B79p82VjDPIZ6qC8DY`)
         .then(response => setVideoId(response.data))
         .then(console.log(videoId))
-    }, [videoId]);
-
+    }, []);
     
-    
+        
     return (
-      <div className="container">
-            <TitleBar />
-            <SearchBar setVideoId = {setVideoId}/>
-            <Player videoId = {videoId}/>
-            <AddNewComment videoId = {videoId} />
-            <Comment videoId = {videoId}/>
-            <RelatedVideos videoId = {videoId}/>
-            
+      <div class="container"> 
+        <TitleBar />
+        <SearchBar setVideoId = {setVideoId}/><Player videoId = {videoId}/> 
+          <div class="row">
+          <div class="col-sm-8"> 
+              <AddNewComment videoId = {videoId} />
+              <Comment videoId = {videoId}/>
+          </div>
+          <div class="col-sm-4">
+              <RelatedVideos videoId = {videoId}/>
+          </div>
         </div>
-    )
-}
-
+      </div>
+    )};
 
 export default App;

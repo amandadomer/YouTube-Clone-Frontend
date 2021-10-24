@@ -6,7 +6,7 @@ const RelatedVideos = (props) => {
     const [relatedVideos, setRelatedVideos] = useState([]);
         
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=${ApiKey}`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&type=video&key=AIzaSyDoxGnUT01yftGL-B79p82VjDPIZ6qC8DY`)
             .then(response => setRelatedVideos(response.data.items))
             }, [props.videoId]);
 

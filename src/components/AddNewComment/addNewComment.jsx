@@ -28,7 +28,7 @@ const CreateComment = (props) => {
              <h2>Add Comment</h2>
              <form onSubmit ={handleSubmit}>
                 <input style={{width: '40%', height: '100px', borderRadius: '5px'}}name="text" placeholder="Say something..."onChange={handleChange}></input>
-                <button type = "submit"> Add Comment</button>
+                <button type = "submit" className="btn btn-dark"> Add Comment</button>
              </form>  
          </div>
      )
